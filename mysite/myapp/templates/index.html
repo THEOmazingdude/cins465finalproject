@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{{ title }}</title>
-    </head>
-    <body>
-        {{ body }} 
-    </body>
-</html>
+{% extends "base.html" %}
+
+{% block title%} {{ title }} {% endblock %}
+{% block body %} {{ body }} {% endblock %}
