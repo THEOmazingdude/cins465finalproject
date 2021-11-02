@@ -3,6 +3,8 @@ from django.shortcuts import redirect
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 from . import models
 from . import forms
@@ -29,11 +31,13 @@ def play(request):
 
 @login_required
 def players(request):
+    Player = get_user_model()
+    player_list = Player.objects.all()
     context = {
-        "title": "cins465 Final Project",
-        "body": "List all players by username."
+        "title": "PLAYERS",
+        "player_list": player_list,
     }
-    return render(request, "index.html", context = context)
+    return render(request, "players.html", context = context)
 #end players
 
 @login_required
@@ -66,3 +70,4 @@ def logout_view(request):
     logout(request)
     return redirect("/")
 #end logout
+
