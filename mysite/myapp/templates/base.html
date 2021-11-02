@@ -21,9 +21,10 @@
             <div class = "top-bar-right">
                 <ul class = "menu">
                     {% if request.user.is_authenticated %}
-                        <li>logout</li>
+                        <li class = "menu-text">{{ request.user.username }}</li>
+                        <li><a class = "button" href = "/logout/">logout</a></li>
                     {% else %}
-                        <li>login</li>
+                        <li><a class = "button" href = "/login/">login</a></li>
                     {% endif %}
                 </ul>
             </div><!--top bar right-->
