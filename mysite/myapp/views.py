@@ -23,10 +23,10 @@ def index(request):
 @login_required
 def play(request):
     context = {
-        "title": "cins465 Final Project",
+        "title": "play",
         "body": "This is where you can play games... hopefully."
     }
-    return render(request, "index.html", context = context)
+    return render(request, "board.html", context = context)
 #end play
 
 @login_required
@@ -43,7 +43,7 @@ def players(request):
 @login_required
 def yourgames(request):
     context = {
-        "title": "cins465 Final Project",
+        "title": "your games",
         "body": "On this page you can see your stats for all of your games."
     }
     return render(request, "index.html", context = context)
