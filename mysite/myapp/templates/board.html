@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title%} {{ title }} {% endblock %}
 {% block body %}
 
@@ -208,8 +208,8 @@
         F3
     </div>
     <!--F3-->
-    <div id = "G3" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;">
-        G3
+    <div id = "G3" onclick="move(this)"class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;">
+        ""
     </div>
     <!--G3-->
     <div id = "H3" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);">
@@ -284,13 +284,15 @@
         &#x2658
     </div>
     <!--G1-->
-    <div id = "H1" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+    <div id = "H1" onclick="move(this)"class="cell small-1" style="cursor: pointer;border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
         &#x2656
     </div>
     <!--H1-->
 </div>
 <!--1st rank-->
 
+
+<script src="{% static 'js/myscripts.js' %}"></script>
 
 
 {% endblock %}
