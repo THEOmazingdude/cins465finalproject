@@ -11,4 +11,6 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view()),
     path('register/', views.register),
     path('logout/', views.logout_view),
+    path('chat/', views.chat_index, name = 'index'),
+    path('chat/<str:room_name>/', views.room, name = 'room'),
 ]

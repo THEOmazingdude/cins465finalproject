@@ -7,10 +7,18 @@ services:
     build: .
     volumes:
        - .:/code
+    links:
+      - redis:redis
     expose:
        - 8000
     user: 1000:1000
     command: python /code/mysite/manage.py runserver 0.0.0.0:8000
+   #  command: daphne -b 0.0.0.0 -p 8000 mysite.asgi:application
+
+  redis:
+   image: redis:latest
+   expose:
+      - 6379
   
   nginx:
    restart: always

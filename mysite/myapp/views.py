@@ -71,3 +71,16 @@ def logout_view(request):
     return redirect("/")
 #end logout
 
+def chat_index(request):
+    context = {
+        "title": "Chat"
+    }
+    return render(request, "chat/index.html", context = context)
+#edn chat index
+
+def room(request, room_name):
+    return render(request, "chat/room.html", {
+        "room_name": room_name
+    })
+#end room
+
