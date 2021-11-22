@@ -72,15 +72,18 @@ def logout_view(request):
 #end logout
 
 def chat_index(request):
+    user = request.user.username
     context = {
-        "title": "Chat"
+        "title": "Chat",
+        "user": user
     }
     return render(request, "chat/index.html", context = context)
 #edn chat index
 
 def room(request, room_name):
     return render(request, "chat/room.html", {
-        "room_name": room_name
+        "room_name": room_name,
+        "user": request.user.username
     })
 #end room
 

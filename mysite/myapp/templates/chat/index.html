@@ -4,21 +4,36 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block body %}
-    What chat room would you like to enter?<br>
-    <input id="room-name-input" type="text" size="100"><br>
-    <input id="room-name-submit" type="button" value="Enter">
+    <div class = "menu-text">To host a game, press host</div>
+    <div id = "user-name" class = "transbox" opacity = 0 title = {{ user }}></div>
+    <br>
+    <input id = "host-button" class = "button" value = "HOST" onclick = "host(this)"><br>
+    <div class = "menu-text">To join a game, enter the username of the player you are joining and press join</div>
+    <br>
+    
+    <input id="room-name-input" class="text" size="100"><br>
+    <input id="room-name-submit" class="button" value="JOIN" onclick = "host(this)">
+
+
 
     <script>
-        document.querySelector('#room-name-input').focus();
-        document.querySelector('#room-name-input').onkeyup = function(e) {
-            if (e.keyCode === 13) {  // enter, return
-                document.querySelector('#room-name-submit').click();
-            }
-        };
 
-        document.querySelector('#room-name-submit').onclick = function(e) {
-            var roomName = document.querySelector('#room-name-input').value;
-            window.location.pathname = '/chat/' + roomName + '/';
-        };
+        
+        
+        function host(element) {
+            if (element.id === "host-button") {
+                var roomName = document.querySelector('#user-name').title;
+                window.location.pathname = '/chat/' + roomName + '/';
+            }
+            else {
+                var roomName = document.querySelector('#room-name-input').value;
+                window.location.pathname = '/chat/' + roomName + '/';
+            }
+        }
+
+        
+        
+
+        
     </script>
 {% endblock %}
