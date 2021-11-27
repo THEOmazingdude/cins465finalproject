@@ -6,14 +6,309 @@
 
 {% block body %}
     
-    <textarea id="chat-log" cols="100" rows="20"></textarea><br>
+    <!-- <textarea id="chat-log" cols="100" rows="20"></textarea><br>
     <input id="chat-message-input" type="text" size="100"><br>
-    <input id="chat-message-submit" type="button" value="Send">
+    <input id="chat-message-submit" type="button" value="Send"> -->
     {{ room_name|json_script:"room-name" }}
     {{ user|json_script:"user"}}
+
+
+    <div class="grid-x" style="width: 1024px;height: 96px">
+        <div id = "A8" onclick="move(this)" class="cell small-1" style="cursor: grabbing;border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265C
+        </div>
+        <!--A8-->
+        <div id = "B8" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265E
+        </div>
+        <!--B8-->
+        <div id = "C8" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265D
+        </div>
+        <!--C8-->
+        <div id = "D8" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265B
+        </div>
+        <!--D8-->
+        <div id = "E8" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265A
+        </div>
+        <!--E8-->
+        <div id = "F8" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265D
+        </div>
+        <!--F8-->
+        <div id = "G8" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265E
+        </div>
+        <!--G8-->
+        <div id = "H8" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265C
+        </div>
+        <!--H8-->
+    </div>
+    <!--8th rank-->
+    
+    <div class="grid-x" style="width: 1024px;height: 96px">
+        <div id = "A7" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265F
+        </div>
+        <!--A7-->
+        <div id = "B7" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265F
+        </div>
+        <!--B7-->
+        <div id = "C7" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265F
+        </div>
+        <!--C7-->
+        <div id = "D7" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265F
+        </div>
+        <!--D7-->
+        <div id = "E7" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265F
+        </div>
+        <!--E7-->
+        <div id = "F7" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265F
+        </div>
+        <!--F7-->
+        <div id = "G7" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray; text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265F
+        </div>
+        <!--G7-->
+        <div id = "H7" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x265F
+        </div>
+        <!--H7-->
+    </div>
+    <!--7th rank-->
+    
+    <div class="grid-x" style="width: 1024px;height: 96px">
+        <div id = "A6" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--A6-->
+        <div id = "B6" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--B6-->
+        <div id = "C6" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--C6-->
+        <div id = "D6" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--D6-->
+        <div id = "E6" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--E6-->
+        <div id = "F6" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--F6-->
+        <div id = "G6" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--B6-->
+        <div id = "H6" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--H6-->
+    </div>
+    <!--6th rank-->
+    
+    <div class="grid-x" style="width: 1024px;height: 96px">
+        <div id = "A5" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--A5-->
+        <div id = "B5" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--B5-->
+        <div id = "C5" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--C5-->
+        <div id = "D5" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--D5-->
+        <div id = "E5" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--E5-->
+        <div id = "F5" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--F5-->
+        <div id = "G5" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--G5-->
+        <div id = "H5" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--H5-->
+    </div>
+    <!--5th rank-->
+    
+    <div class="grid-x" style="width: 1024px;height: 96px">
+        <div id = "A4" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--A4-->
+        <div id = "B4" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--B4-->
+        <div id = "C4" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--C4-->
+        <div id = "D4" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--D3-->
+        <div id = "E4" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--E4-->
+        <div id = "F4" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--F4-->
+        <div id = "G4" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--G4-->
+        <div id = "H4" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+           
+        </div>
+        <!--H4-->
+    </div>
+    <!--4th rank-->
+    
+    <div class="grid-x" style="width: 1024px;height: 96px">
+        <div id = "A3" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--A3-->
+        <div id = "B3" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--B3-->
+        <div id = "C3" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--C3-->
+        <div id = "D3" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--D3-->
+        <div id = "E3" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--E3-->
+        <div id = "F3" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--F3-->
+        <div id = "G3" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--G3-->
+        <div id = "H3" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            
+        </div>
+        <!--H3-->
+    </div>
+    <!--3rd rank-->
+    
+    <div class="grid-x" style="width: 1024px;height: 96px">
+        <div id = "A2" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2659
+        </div>
+        <!--A2-->
+        <div id = "B2" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2659
+        </div>
+        <!--B2-->
+        <div id = "C2" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2659
+        </div>
+        <!--C2-->
+        <div id = "D2" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2659
+        </div>
+        <!--D2-->
+        <div id = "E2" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2659
+        </div>
+        <!--E2-->
+        <div id = "F2" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2659
+        </div>
+        <!--F2-->
+        <div id = "G2" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2659  
+        </div>
+        <!--G2-->
+        <div id = "H2" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2659
+        </div>
+        <!--H2-->
+    </div>
+    <!--2nd rank-->
+    
+    <div class="grid-x" style="width: 1024px;height: 96px">
+        <div id = "A1" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2656
+        </div>
+        <!--A1-->
+        <div id = "B1" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2658
+        </div>
+        <!--B2-->
+        <div id = "C1" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2657
+        </div>
+        <!--C1-->
+        <div id = "D1" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2655
+        </div>
+        <!--D1-->
+        <div id = "E1" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2654
+        </div>
+        <!--E1-->
+        <div id = "F1" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2657
+        </div>
+        <!--F1-->
+        <div id = "G1" onclick="move(this)" class="cell small-1" style="border: 1px solid rgb(0, 0, 0);background-color: dimgray;text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2658
+        </div>
+        <!--G1-->
+        <div id = "H1" onclick="move(this)" class="cell small-1" style="cursor: pointer;border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
+            &#x2656
+        </div>
+        <!--H1-->
+    </div>
+    <!--1st rank-->
+
+
     <script>
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
         const user = JSON.parse(document.getElementById('user').textContent);
+        var square1 = "";
+        var square2 = "";
+        var piece = "";
+        var pickedup = 0;
 
         const chatSocket = new WebSocket(
             'ws://'
@@ -25,27 +320,46 @@
 
         chatSocket.onmessage = function(e) {
             const data = JSON.parse(e.data);
-            document.querySelector('#chat-log').value += (data.message + '\n');
+            // document.querySelector('#chat-log').value += (data.message + '\n');
+            document.getElementById(data.dest).innerHTML = document.getElementById(data.source).textContent;
+            document.getElementById(data.source).innerHTML = "";
+            
         };
 
         chatSocket.onclose = function(e) {
             console.error('Chat socket closed unexpectedly');
         };
 
-        document.querySelector('#chat-message-input').focus();
-        document.querySelector('#chat-message-input').onkeyup = function(e) {
-            if (e.keyCode === 13) {  // enter, return
-                document.querySelector('#chat-message-submit').click();
-            }
-        };
+        function move(e) {
+            if (pickedup == 1) {
+                //put the piece down
+                square2 = e.id;
+                e.innerHTML = piece;
+                pickedup = 0;
+                
+                chatSocket.send(JSON.stringify({
+                    'source': square1,
+                    'dest': square2
+                }));
+            }//if
+            else {
+                if (e.textContent.trim() != '') {
+                    //square is not empty, pick up the piece
+                    square1 = e.id;
+                    piece = e.textContent;
+                    // e.style.backgroundColor = "green";
+                    pickedup = 1;
+                }//if
+            }//else  
+        }//move
 
-        document.querySelector('#chat-message-submit').onclick = function(e) {
-            const messageInputDom = document.querySelector('#chat-message-input');
-            const message = user + ': ' + messageInputDom.value;
-            chatSocket.send(JSON.stringify({
-                'message': message
-            }));
-            messageInputDom.value = '';
-        };
+        // document.querySelector('#chat-message-submit').onclick = function(e) {
+        //     const messageInputDom = document.querySelector('#chat-message-input');
+        //     const message = user + ': ' + messageInputDom.value;
+        //     chatSocket.send(JSON.stringify({
+        //         'message': message
+        //     }));
+        //     messageInputDom.value = '';
+        // };
     </script>
 {% endblock %}
