@@ -17,16 +17,16 @@ def index(request):
         "title": "cins465 Final Project",
         "body": "Home Page"
     }
-    return render(request, "index.html", context = context)
+    return render(request, "board.html", context = context)
 #end index
 
 @login_required
 def play(request):
     context = {
         "title": "play",
-        "body": "This is where you can play games... hopefully."
+        "user": request.user.username
     }
-    return render(request, "board.html", context = context)
+    return render(request, "chat/index.html", context = context)
 #end play
 
 @login_required
@@ -39,6 +39,16 @@ def players(request):
     }
     return render(request, "players.html", context = context)
 #end players
+
+@login_required
+def player(request, player):
+    gamelist = models.game.objects.filter(players__username = player)
+    context = {
+        "title": player,
+        "body": "Here are stats about " + player,
+        "count": gamelist.count,
+    }
+    return render(request, "player.html", context = context)
 
 @login_required
 def yourgames(request):
@@ -81,9 +91,19 @@ def chat_index(request):
 #edn chat index
 
 def room(request, room_name):
-    return render(request, "chat/room.html", {
+    if request.method == "POST":
+        form = forms.gameForm(request.POST)
+        if form.is_valid() and request.user.is_authenticated:
+            form.save()
+            form = forms.gameForm()
+    else:
+        form = forms.gameForm()
+
+    context = {
         "room_name": room_name,
-        "user": request.user.username
-    })
+        "user": request.user.username,
+        "form": form
+    }
+    return render(request, "chat/room.html", context = context)
 #end room
 

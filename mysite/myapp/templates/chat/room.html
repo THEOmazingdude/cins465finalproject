@@ -1,5 +1,6 @@
 <!-- chat/templates/chat/room.html -->
 
+
 {% extends "base.html" %}
 
 {% block title %}{{ title }}{% endblock %}
@@ -300,6 +301,18 @@
         <!--H1-->
     </div>
     <!--1st rank-->
+    <br>
+
+    <form action = "/chat/{{ room_name }}/" method = "post">
+        {% csrf_token %}
+        <div>{{ form.white.label }}</div>
+        <div>{{ form.white }}</div>
+        <div>{{ form.white.errors }}</div>
+        <div>{{ form.black.label }}</div>
+        <div>{{ form.black }}</div>
+        <div>{{ form.black.errors }}</div>
+        <input type = "submit" class = "button" value = "start game">
+    </form>
 
 
     <script>
@@ -309,6 +322,8 @@
         var square2 = "";
         var piece = "";
         var pickedup = 0;
+
+        
 
         const chatSocket = new WebSocket(
             'ws://'

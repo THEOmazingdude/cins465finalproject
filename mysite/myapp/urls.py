@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.index),
     path('play/', views.play),
     path('players/', views.players),
+    path('players/<str:player>/', views.player),
     path('yourgames/', views.yourgames),
     path('login/', auth_views.LoginView.as_view()),
     path('register/', views.register),

@@ -4,9 +4,11 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block body %}
+
+    {{ user|json_script:"user"}}
+
     <div class = "menu-text">To host a game, press host</div>
-    <div id = "user-name" class = "transbox" opacity = 0 title = {{ user }}></div>
-    <br>
+    
     <input id = "host-button" class = "button" value = "HOST" onclick = "host(this)"><br>
     <div class = "menu-text">To join a game, enter the username of the player you are joining and press join</div>
     <br>
@@ -18,18 +20,25 @@
 
     <script>
 
-        
+        const user = JSON.parse(document.getElementById('user').textContent);
+
+        document.querySelector('#room-name-input').focus();
+        document.querySelector('#room-name-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {
+                document.querySelector('#room-name-submit').click();
+            }
+        };
         
         function host(element) {
             if (element.id === "host-button") {
-                var roomName = document.querySelector('#user-name').title;
+                var roomName = user;
                 window.location.pathname = '/chat/' + roomName + '/';
             }
             else {
                 var roomName = document.querySelector('#room-name-input').value;
                 window.location.pathname = '/chat/' + roomName + '/';
             }
-        }
+        };
 
         
         

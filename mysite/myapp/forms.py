@@ -30,3 +30,32 @@ class RegistrationForm(UserCreationForm):
         return user
     #end save
 #end reg form
+
+def must_be_auth_user(value):
+    entry = auth_user.objects.filter(username = value)
+    if len(entry) == 0:
+        raise forms.ValidationError("Players must be authenticated users")
+    return value
+
+
+class gameForm(forms.Form):
+    white = forms.CharField(
+        label = "White",
+        required = True,
+        validators=[must_be_auth_user]
+    )
+
+    black = forms.CharField(
+        label = "Black",
+        required = True,
+        validators=[must_be_auth_user]
+    )
+
+    def save(self):
+        game_instance = models.game()
+        game_instance.save()
+        game_instance.players.add(models.auth_user.objects.get(username = self.cleaned_data["white"]))
+        game_instance.players.add(models.auth_user.objects.get(username = self.cleaned_data["black"]))
+        return game_instance
+
+    

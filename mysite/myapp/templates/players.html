@@ -4,7 +4,8 @@
 {% block body %}
 <ul>
     {% for player in player_list %}
-    <li>{{ player.username }}</li>
+
+    <li><a href = "/players/{{ player.username }}">{{ player.username }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}
