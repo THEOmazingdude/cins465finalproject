@@ -44,7 +44,7 @@ def players(request):
 def player(request, player):
     gamelist = models.game.objects.filter(players__username = player)
     gameswon = models.game.objects.filter(winner = player)
-    draws = gamelist.filter(winner = "DRAW")
+    draws = gamelist.filter(winner = "draw")
     context = {
         "title": player,
         "count": gamelist.count,
@@ -57,7 +57,7 @@ def player(request, player):
 def yourgames(request):
     gameslist = models.game.objects.filter(players__username = request.user.username)
     gameswon = models.game.objects.filter(winner = request.user.username)
-    draws = gameslist.filter(winner = "DRAW")
+    draws = gameslist.filter(winner = "draw")
     context = {
         "title": request.user.username,
         "count": gameslist.count,

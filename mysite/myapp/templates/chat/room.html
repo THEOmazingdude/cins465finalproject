@@ -12,7 +12,7 @@
     {{ user|json_script:"user"}}
 
     <div class="grid-x grid-padding-x">
-        <div id="board" class = "cell small-6">
+        <div id="board" class = "cell small-8">
             <div class="grid-x" style="width: 1300px;height: 96px">
                 <div id = "A8" onclick="move(this)" class="cell small-1" style="cursor: grabbing;border: 1px solid rgb(0, 0, 0);text-align: center; vertical-align: middle;line-height: 96px;font-size: 90px;">
                     &#x265C
@@ -301,7 +301,7 @@
             </div>
             <!--1st rank-->
         </div>
-        <div id="chat" class="cell small-6" style="float:left">
+        <div id="chat" class="cell small-4" style="float:right">
             <textarea id="chat-log" cols="25" rows="25"></textarea><br>
             <input id="chat-message-input" onclick="focus(this)" type="text" size="100"><br>
             <input id="chat-message-submit" type="button" value="Send">
