@@ -37,25 +37,39 @@ def must_be_auth_user(value):
         raise forms.ValidationError("Players must be authenticated users")
     return value
 
+def valid_winner(value):
+    entry = auth_user.objects.filter(username = value)
+    winner = value.upper()
+    if len(entry) == 0 and winner != "DRAW":
+        raise forms.ValidationError("Winner must be an authenticated user or 'draw'")
+    return winner
 
 class gameForm(forms.Form):
     white = forms.CharField(
-        label = "White",
+        label = "White:",
         required = True,
         validators=[must_be_auth_user]
     )
 
     black = forms.CharField(
-        label = "Black",
+        label = "Black:",
         required = True,
         validators=[must_be_auth_user]
     )
 
+    winner = forms.CharField(
+        label = "Winner:",
+        required = True,
+        validators = [valid_winner]
+    )
+
     def save(self):
         game_instance = models.game()
+        game_instance.winner = self.cleaned_data["winner"].upper()
         game_instance.save()
         game_instance.players.add(models.auth_user.objects.get(username = self.cleaned_data["white"]))
         game_instance.players.add(models.auth_user.objects.get(username = self.cleaned_data["black"]))
+        
         return game_instance
 
     

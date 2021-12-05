@@ -2,6 +2,13 @@
 
 {% block title %}{{ title }}{% endblock %}
 {% block body %}
-{{ body }}
-{{ title }} has played {{ count }} games.
+    {% if title  ==  request.user.username %}
+        <div>You have played {{ count }} games.</div>
+        <div>You have won {{ wins }} games.</div>
+        <div>You have drawn {{ draws }} games.</div>
+    {% else %}
+    <div>{{ title }} has played {{ count }} games.</div>
+    <div>{{ title }} has won {{ wins }} games.</div>
+    <div>{{ title }} has drawn {{ draws }} games.</div>
+    {% endif %}
 {% endblock %}

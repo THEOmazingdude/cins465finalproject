@@ -43,20 +43,29 @@ def players(request):
 @login_required
 def player(request, player):
     gamelist = models.game.objects.filter(players__username = player)
+    gameswon = models.game.objects.filter(winner = player)
+    draws = gamelist.filter(winner = "DRAW")
     context = {
         "title": player,
-        "body": "Here are stats about " + player,
         "count": gamelist.count,
+        "wins": gameswon.count,
+        "draws": draws.count
     }
     return render(request, "player.html", context = context)
 
 @login_required
 def yourgames(request):
+    gameslist = models.game.objects.filter(players__username = request.user.username)
+    gameswon = models.game.objects.filter(winner = request.user.username)
+    draws = gameslist.filter(winner = "DRAW")
     context = {
-        "title": "your games",
-        "body": "On this page you can see your stats for all of your games."
+        "title": request.user.username,
+        "count": gameslist.count,
+        "wins": gameswon.count,
+        "draws": draws.count
+        
     }
-    return render(request, "index.html", context = context)
+    return render(request, "player.html", context = context)
 #end yourgames
 
 def register(request):
