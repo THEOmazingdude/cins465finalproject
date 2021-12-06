@@ -11,4 +11,30 @@
     <div>{{ title }} has won {{ wins }} games.</div>
     <div>{{ title }} has drawn {{ draws }} games.</div>
     {% endif %}
+    <br>
+    <hr>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Players</th>
+                <th>Winner</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for game in gamelist %}
+            <tr>
+                <td>
+                    {% for player in game.players.all %}
+                        {{ player.username }}
+                    {% endfor %}
+                </td>
+                <td>
+                    {{ game.winner }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        
+    </table>
 {% endblock %}

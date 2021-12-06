@@ -6,4 +6,6 @@ from django.contrib.auth.models import User as auth_user
 class game(models.Model):
     players = models.ManyToManyField(auth_user)
     winner = models.CharField(max_length=240)
+
+    
     

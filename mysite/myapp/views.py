@@ -49,7 +49,8 @@ def player(request, player):
         "title": player,
         "count": gamelist.count,
         "wins": gameswon.count,
-        "draws": draws.count
+        "draws": draws.count,
+        "gamelist": gamelist
     }
     return render(request, "player.html", context = context)
 
@@ -62,8 +63,8 @@ def yourgames(request):
         "title": request.user.username,
         "count": gameslist.count,
         "wins": gameswon.count,
-        "draws": draws.count
-        
+        "draws": draws.count,
+        "gamelist": gameslist
     }
     return render(request, "player.html", context = context)
 #end yourgames
