@@ -56,6 +56,15 @@ def player(request, player):
 
 @login_required
 def yourgames(request):
+
+    if request.method == "POST":
+        form = forms.gameForm(request.POST)
+        if form.is_valid() and request.user.is_authenticated:
+            form.save()
+            form = forms.gameForm()
+    else:
+        form = forms.gameForm()
+    
     gameslist = models.game.objects.filter(players__username = request.user.username)
     gameswon = models.game.objects.filter(winner = request.user.username)
     draws = gameslist.filter(winner = "draw")
